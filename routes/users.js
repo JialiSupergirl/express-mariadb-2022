@@ -8,7 +8,7 @@ const usersModel = require('../model/user');
 router.get('/', async function (req, res, next) {
 
   let result = await usersModel.getUsers();
-  res.render("users", result.data);
+  res.render("users", { title: "Users", users: result });
 });
 
 router.get('/:userId', async function (req, res, next) {
